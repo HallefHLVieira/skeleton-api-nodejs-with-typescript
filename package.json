@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "compile": "tsc",
-    "commit": "git-cz"
+    "compile": "tsc"
   },
   "repository": {
     "type": "git",
@@ -51,6 +50,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
     }
   }
